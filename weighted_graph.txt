@@ -1,0 +1,9 @@
+# Weighed undirected graph description file
+# Each line is an edge, in the format node1,node2,weight
+A,B,1
+A,C,2
+B,C,3
+B,D,4
+D,C,5
+C,F,6
+F,E,7
