@@ -1,4 +1,5 @@
 from sys import argv
+from timer import Timer
 import re
 
 def edge_has_been_visited(path, edge):
@@ -80,7 +81,7 @@ main_weights = {}
 
 with open(filename, 'r') as file:
     for line in file:
-        if not line[0] == '#':    
+        if not line[0] == '#':
             node_a, node_b, weight = re.split(',', line)
             for direction in [(node_a, node_b),(node_b, node_a)]:
                 if not main_graph.has_key(direction[0]):
@@ -89,10 +90,12 @@ with open(filename, 'r') as file:
                     main_graph[direction[0]] += [direction[1]]
                 main_weights[direction] = int(weight.strip())
 
-print "graph: " + str(main_graph)
-print "weights: " + str(main_weights)
+# print "graph: " + str(main_graph)
+# print "weights: " + str(main_weights)
 
-longest = find_longest_trail(main_graph, main_weights)
+with Timer() as t:
+    longest = find_longest_trail(main_graph, main_weights)
 
 print "Longest trail: " + str(longest[0])
 print "Distance: " + str(longest[1])
+print "Calculated in {} s".format(t.secs)
