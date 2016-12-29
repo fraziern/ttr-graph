@@ -11,7 +11,26 @@ This Python script accepts one command line argument - the filename for a graph 
 
 This uses a brute-force algorithm, as the longest path/trail problem is NP-hard for non-Eulerian graphs (as I understand it).
 
-*Graph Definition File* (sample included at `graph.txt`)
+To run:
+
+`$ python ttr_longest_trail.py weights.txt my_routes.json`
+
+*Graph Definition File* (sample included at `my_routes.json`)
+This file defines the edges of the graph to analyze, and must be a subgraph of the graph defined in the weights file. In other words, it should be a valid set of TTR routes. This is a JSON file of the format (for example):
+
+```
+{
+    "routes": [
+        {"node1": "Los Angeles", "node2": "Phoenix"},
+        {"node1": "El Paso", "node2": "Phoenix"},
+        {"node1": "El Paso", "node2": "Los Angeles"},
+        {"node1": "El Paso", "node2": "Santa Fe"},
+        {"node1": "Denver", "node2": "Santa Fe"}
+    ]
+}
+```
+
+*Weights Definition File* (`weights.txt`)
 This file defines a undirected weighted graph, with the following format:
 
  1. Each line defines one edge
