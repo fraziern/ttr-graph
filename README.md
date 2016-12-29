@@ -27,7 +27,7 @@ Roadmap:
 
 Short term/long term goals:
 
-- [ ] Accept JSON list of edges (without weights) as input. Weights are pre-stored since they never change.
+- [x] Accept JSON list of edges (without weights) as input. Weights are pre-stored since they never change.
 - [ ] Create a Flask API for the algorithms
 - [ ] Create a front-end site UI that allows graphical path selection and display
 - [ ] Add shortest path algorithm(s)
