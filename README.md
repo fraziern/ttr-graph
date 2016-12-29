@@ -37,7 +37,7 @@ This file defines a undirected weighted graph, with the following format:
  2. An edge is defined using the syntax `node1,node2,weight`
  3. Lines starting with a `#` are considered comments and are ignored
 
-The current iteration of `graph.txt` contains *all* the edges in TTR.
+The current iteration of `weights.txt` contains *all* the edges in TTR.
 
 Everything else right now is an experimental test or a utility.
 
