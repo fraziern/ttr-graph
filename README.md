@@ -25,8 +25,8 @@ Roadmap:
 
 Short term/long term goals:
 
- [ ] Accept JSON list of edges (without weights) as input. Weights are pre-stored since they never change.
- [ ] Create a Flask API for the algorithms
- [ ] Create a front-end site UI that allows graphical path selection and display
- [ ] Add shortest path algorithm(s)
- [ ] Add score calculator (i.e. input your routes and get your TTR score)
+- [ ] Accept JSON list of edges (without weights) as input. Weights are pre-stored since they never change.
+- [ ] Create a Flask API for the algorithms
+- [ ] Create a front-end site UI that allows graphical path selection and display
+- [ ] Add shortest path algorithm(s)
+- [ ] Add score calculator (i.e. input your routes and get your TTR score)
