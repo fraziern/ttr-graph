@@ -1,0 +1,80 @@
+# Weighed undirected graph description file
+# Each line is an edge, in the format node1,node2,weight
+Atlanta,Charleston,2
+Atlanta,Nashville,1
+Atlanta,New Orleans,4
+Atlanta,Miami,5
+Boston,Montreal,2
+Boston,New York,2
+Calgary,Helena,4
+Calgary,Seattle,4
+Calgary,Vancouver,3
+Calgary,Winnipeg,6
+Charleston,Miami,4
+Charleston,Raleigh,2
+Chicago,Duluth,3
+Chicago,Omaha,4
+Chicago,Pittsburgh,3
+Chicago,Saint Louis,2
+Chicago,Toronto,4
+Dallas,El Paso,4
+Dallas,Houston,1
+Dallas,Little Rock,2
+Dallas,Oklahoma City,2
+Denver,Helena,4
+Denver,Kansas City,4
+Denver,Oklahoma City,4
+Denver,Omaha,4
+Denver,Phoenix,5
+Denver,Salt Lake City,3
+Denver,Santa Fe,2
+Duluth,Helena,6
+Duluth,Omaha,2
+Duluth,Sault St. Marie,3
+Duluth,Toronto,6
+Duluth,Winnipeg,4
+El Paso,Houston,6
+El Paso,Los Angeles,6
+El Paso,Oklahoma City,5
+El Paso,Phoenix,3
+El Paso,Santa Fe,2
+Helena,Omaha,5
+Helena,Salt Lake City,3
+Helena,Seattle,6
+Helena,Winnipeg,4
+Houston,New Orleans,2
+Kansas City,Omaha,1
+Kansas City,Saint Louis,2
+Las Vegas,Los Angeles,2
+Las Vegas,Salt Lake City,3
+Little Rock,Nashville,3
+Little Rock,New Orleans,3
+Little Rock,Oklahoma City,2
+Little Rock,Saint Louis,2
+Los Angeles,Phoenix,3
+Los Angeles,San Fransisco,3
+Miami,New Orleans,6
+Montreal,New York,3
+Montreal,Sault St. Marie,5
+Montreal,Toronto,3
+Nashville,Pittsburgh,4
+Nashville,Raleigh,3
+Nashville,Saint Louis,2
+New York,Pittsburgh,2
+New York,Washington,2
+Oklahoma City,Santa Fe,3
+Oklahoma City,Kansas City,2
+Phoenix,Santa Fe,3
+Pittsburgh,Raleigh,2
+Pittsburgh,Saint Louis,5
+Pittsburgh,Toronto,2
+Pittsburgh,Washington,2
+Portland,Salt Lake City,6
+Portland,San Francisco,6
+Portland,Seattle,1
+Raleigh,Atlanta,2
+Salt Lake City,San Francisco,5
+Sault St. Marie,Toronto,2
+Sault St. Marie,Winnipeg,6
+Seattle,Vancouver,1
+Washington,Raleigh,2

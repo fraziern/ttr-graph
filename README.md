@@ -20,6 +20,8 @@ This file defines a undirected weighted graph, with the following format:
 
 The current iteration of `graph.txt` contains *all* the edges in TTR.
 
+Everything else right now is an experimental test or a utility.
+
 Roadmap:
 --------
 
@@ -30,3 +32,4 @@ Short term/long term goals:
 - [ ] Create a front-end site UI that allows graphical path selection and display
 - [ ] Add shortest path algorithm(s)
 - [ ] Add score calculator (i.e. input your routes and get your TTR score)
+- [ ] Optimize longest trail algorithm using multithreading, memoization, etc
