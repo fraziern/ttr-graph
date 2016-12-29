@@ -1,0 +1,9 @@
+{
+    "routes": [
+        {"node1": "Los Angeles", "node2": "Phoenix"},
+        {"node1": "El Paso", "node2": "Phoenix"},
+        {"node1": "El Paso", "node2": "Los Angeles"},
+        {"node1": "El Paso", "node2": "Santa Fe"},
+        {"node1": "Denver", "node2": "Santa Fe"}
+    ]
+}

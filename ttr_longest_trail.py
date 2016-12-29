@@ -1,5 +1,6 @@
 from sys import argv
 from timer import Timer
+import json
 import re
 
 def edge_has_been_visited(path, edge):
@@ -56,6 +57,9 @@ def find_longest_trail(graph, weights):
                 longest_trail_distance = newtrail_distance
     return (longest_trail, longest_trail_distance)
 
+def bidirections(nodes):
+    return [(nodes[0], nodes[1]), (nodes[1], nodes[0])]
+
 ###
 # TESTS
 ###
@@ -73,29 +77,34 @@ def find_longest_trail(graph, weights):
 # MAIN
 ###
 
-## Read in graph file and build graph and weights dictionaries
-script, filename = argv
+script, weights_file, graph_file = argv
 
 main_graph = {}
 main_weights = {}
 
-with open(filename, 'r') as file:
+# Read files, build weights and graph dicts
+# Todo - make weights a JSON file too for consistency
+with open(weights_file, 'r') as file:
     for line in file:
         if not line[0] == '#':
             node_a, node_b, weight = re.split(',', line)
-            for direction in [(node_a, node_b),(node_b, node_a)]:
-                if not main_graph.has_key(direction[0]):
-                    main_graph[direction[0]] = [direction[1]]
-                else:
-                    main_graph[direction[0]] += [direction[1]]
+            for direction in bidirections([node_a, node_b]):
                 main_weights[direction] = int(weight.strip())
 
-# print "graph: " + str(main_graph)
-# print "weights: " + str(main_weights)
+with open(graph_file, 'r') as file:
+    json_graph = json.loads(file.read())
 
+for route in json_graph['routes']:
+    for direction in bidirections(route.values()):
+        if not main_graph.has_key(direction[0]):
+            main_graph[direction[0]] = [direction[1]]
+        else:
+            main_graph[direction[0]] += [direction[1]]
+
+# run algorithm
 with Timer() as t:
     longest = find_longest_trail(main_graph, main_weights)
 
-print "Longest trail: " + str(longest[0])
+print "Longest trail: " + str([city.encode('utf-8') for city in longest[0]])
 print "Distance: " + str(longest[1])
 print "Calculated in {} s".format(t.secs)
