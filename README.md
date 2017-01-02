@@ -6,14 +6,14 @@ This houses my experiments with graph algorithms in Python, inspired by the boar
 Contents:
 ---------
 
-*Longest Continuous Trail* (`ttr_longest_trail.py`)
-This Python script accepts one command line argument - the filename for a graph definition file. It outputs the longest continuous "trail" (where no edge can be repeated, per TTR rules) found in the input graph.
+*Longest Continuous Trail* (`longest3.py`)
+This Python script requires two command line arguments - the filename for the weights file, and the filename for a graph definition file. It outputs the longest continuous "trail" (where no edge can be repeated, per TTR rules) found in the input graph.
 
-This uses a brute-force algorithm, as the longest path/trail problem is NP-hard for non-Eulerian graphs (as I understand it).
+This uses a brute-force algorithm, as the longest path/trail problem is NP-hard for an undirected cyclic graph such as this [(as I understand it)](https://en.wikipedia.org/wiki/Longest_path_problem).
 
 To run:
 
-`$ python ttr_longest_trail.py weights.txt my_routes.json`
+`$ python longest3.py weights.txt my_routes.json`
 
 *Graph Definition File* (sample included at `my_routes.json`)
 This file defines the edges of the graph to analyze, and must be a subgraph of the graph defined in the weights file. In other words, it should be a valid set of TTR routes. This is a JSON file of the format (for example):
