@@ -1,3 +1,9 @@
+from sys import argv
+from timer import Timer
+import json
+import re
+import weights
+
 def _edge_has_been_visited(path, edge):
     # assert len(edge) == 2
     last_index = len(path) - 1
@@ -51,7 +57,7 @@ def find_long_trail(graph, weights, start, path=()):
     return longest_newpath_data
 
 
-def find_longest_trail(graph, weights):
+def find_longest_trail(graph, weights=weights.weights):
     longest_trail_data = ((),0)  # path and distance
     for node in graph.keys():
         newtrail_data = find_long_trail(graph, weights, node)
@@ -74,32 +80,18 @@ def find_longest_trail(graph, weights):
 
 ###
 # MAIN
+#   graph_file: json graph description file name. See example.
 ###
 
-if __name__ == "__main__":
-    from sys import argv
-    from timer import Timer
-    import json
-    import re
-
-    script, weights_file, graph_file = argv
+def main(graph_file):
 
     main_graph = {}
-    main_weights = {}
 
     # helps us add weights and edges in both directions
     def bidirections(nodes):
         return [(nodes[0], nodes[1]), (nodes[1], nodes[0])]
 
-    # Read files, build weights and graph dicts
-    # Todo - make weights a JSON file too for consistency
-    with open(weights_file, 'r') as file:
-        for line in file:
-            if not line[0] == '#':
-                node_a, node_b, weight = re.split(',', line)
-                for direction in bidirections([node_a, node_b]):
-                    main_weights[direction] = int(weight.strip())
-
+    # Read file, build graph dict
     with open(graph_file, 'r') as file:
         json_graph = json.loads(file.read())
 
@@ -112,8 +104,11 @@ if __name__ == "__main__":
 
     # run algorithm
     with Timer() as t:
-        longest = find_longest_trail(main_graph, main_weights)
+        longest = find_longest_trail(main_graph)
 
     print "Longest trail: " + str([city.encode('utf-8') for city in longest[0]])
     print "Distance: " + str(longest[1])
     print "Calculated in {} s".format(t.secs)
+
+if __name__ == "__main__":
+    main(argv[1])
