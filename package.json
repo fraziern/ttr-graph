@@ -1,0 +1,22 @@
+{
+  "name": "ttr-graph",
+  "version": "1.0.0",
+  "description": "Ticket to Ride graph algs",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fraziern/ttr-graph.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fraziern/ttr-graph/issues"
+  },
+  "homepage": "https://github.com/fraziern/ttr-graph#readme",
+  "dependencies": {
+    "express": "^4.15.2"
+  }
+}

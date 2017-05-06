@@ -1,6 +1,9 @@
+###
+# Provides interface between find_longest_trail and stdout, for node spawn
+###
+
 from longest4 import find_longest_trail
 import sys, json
-# node_longest.py
 
 # read in graph description file from stdin
 def read_in():
@@ -24,12 +27,12 @@ def main():
             else:
                 main_graph[direction[0]] += [direction[1]]
 
-    # run algorithm
+    # run algorithm, get response
     longest = find_longest_trail(main_graph)
 
-    # get response, send to stdout
-    print longest[0]
-    print longest[1]
+    # send JSON to stdout
+    json_output = { 'trail': longest[0], 'length': longest[1]}
+    print json.dumps(json_output)
 
 #start process
 if __name__ == '__main__':
