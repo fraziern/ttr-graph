@@ -31,7 +31,7 @@ def main():
     longest = find_longest_trail(main_graph)
 
     # send JSON to stdout
-    json_output = { 'trail': longest[0], 'length': longest[1]}
+    json_output = { 'trail': longest[0], 'length': longest[1] }
     print json.dumps(json_output)
 
 #start process

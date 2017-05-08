@@ -11,7 +11,7 @@ var Controller = function() {
     // TODO add error handling to longestBridge and this
     longestBridge(req.body, function (data) {
       // if (err) return res.status(500).send(err);
-      return res.send(data);
+      return res.json(data);
     });
   }
 
