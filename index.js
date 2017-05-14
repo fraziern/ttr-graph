@@ -34,10 +34,10 @@ pubSub.on("updateDisplay", () => {
   output.textContent = pathList;
 });
 
-var components = document.querySelector("#layer3 > *");
-components.addEventListener("click", (e) => {
-  let id = (e.target && e.target.parentNode) ? e.target.parentNode.id : "";
-  if (~id.indexOf("rte")) {
-    pubSub.publish("toggle", e.target.parentNode.id);
-  }
-});
+var components = document.querySelectorAll("#paths > *");
+for (let i = 0; i < components.length; i++) {
+  components[i].addEventListener("click", (e) => {
+    let id = (e.target && e.target.parentNode) ? e.target.parentNode.id : "";
+    pubSub.publish("toggle", id);
+  });
+}
