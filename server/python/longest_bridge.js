@@ -29,4 +29,6 @@ function longestBridge(json, cb) {
   py.stdin.end();
 }
 
+// TODO: kill child process after timeout
+
 module.exports = longestBridge;

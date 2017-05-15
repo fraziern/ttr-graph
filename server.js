@@ -1,18 +1,21 @@
-let express = require('express');
-let bodyParser = require('body-parser');
+let express = require("express");
+let bodyParser = require("body-parser");
 
 let api = require("./server/routes/api.routes");
 
 let app = express();
 
 //parse application/json
-app.use(bodyParser.json({ type: 'application/json'}));
+app.use(bodyParser.json({ type: "application/json"}));
 
+// serve API routes
 app.use("/api", api);
-app.get('/', function (req, res) {
-  res.send('Usage info goes here.');
-})
+
+// serve static files
+app.use(express.static("public"));
+
+
 
 app.listen(3000, function () {
-  console.log('Example app listening on port 3000!');
-})
+  console.log("TTR Server listening on port 3000!");
+});
