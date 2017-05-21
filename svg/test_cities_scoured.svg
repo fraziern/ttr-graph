@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="svg2" width="188" height="89.64" version="1.1" viewBox="0 0 187.99999 89.640167" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+ <g id="g6391">
+  <rect id="rect9945" transform="matrix(.99749 .070799 -.070799 .99749 0 0)" x="32.762" y="76.655" width="29.385" height="8.3859" opacity=".2802"/>
+  <rect id="rect7759" transform="matrix(.99921 -.039835 .039835 .99921 0 0)" x="59.797" y="83.709" width="29.385" height="8.3858" opacity=".2802"/>
+  <rect id="rect2806" transform="matrix(.9842 -.17705 .17705 .9842 0 0)" x="83.189" y="95.802" width="29.386" height="8.3861" opacity=".2802"/>
+  <rect id="rect8472" transform="matrix(.9592 -.28272 .28272 .9592 0 0)" x="108.06" y="107.58" width="29.385" height="8.3859" opacity=".2802"/>
+ </g>
+ <g id="g6398">
+  <rect id="jhg" transform="matrix(.41699 .90891 -.90891 .41699 0 0)" x="87.628" y="-142.09" width="29.386" height="8.3863" opacity=".2802"/>
+ </g>
+ <g id="g6405">
+  <rect id="rect12477" transform="matrix(-.96578 .25935 -.25935 -.96578 0 0)" x="-135.66" y="-53.962" width="29.385" height="8.3859" opacity=".2802"/>
+  <rect id="rect12479" transform="matrix(-.93122 .36446 -.36446 -.93122 0 0)" x="-93.162" y="-64.714" width="29.385" height="8.3858" opacity=".2802"/>
+  <rect id="rect12481" transform="matrix(-.87216 .48922 -.48922 -.87216 0 0)" x="-47.874" y="-72.27" width="29.386" height="8.3861" opacity=".2802"/>
+  <rect id="rect12483" transform="matrix(-.81397 .5809 -.5809 -.81397 0 0)" x="-4.0101" y="-73.713" width="29.385" height="8.3859" opacity=".2802"/>
+ </g>
+ <circle id="circle6094" transform="scale(1,-1)" cx="9.5" cy="-79.5" r="7.9828" fill="none" opacity=".5976" stroke="#0f8deb" stroke-opacity=".85098" stroke-width="3.0345"/>
+ <circle id="circle6104" transform="scale(1,-1)" cx="178.5" cy="-61.5" r="7.9828" fill="none" opacity=".5976" stroke="#0f8deb" stroke-opacity=".85098" stroke-width="3.0345"/>
+ <circle id="circle6106" transform="scale(1,-1)" cx="157.5" cy="-9.5" r="7.9828" fill="none" opacity=".5976" stroke="#0f8deb" stroke-opacity=".85098" stroke-width="3.0345"/>
+ <metadata id="metadata19874">
+  <rdf:RDF>
+   <cc:Work rdf:about="">
+    <dc:title/>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+</svg>

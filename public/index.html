@@ -4,14 +4,42 @@
     <meta charset="utf-8">
     <title>TTR Graph</title>
     <style>
+      button {
+        background: #3498db;
+        background-image: linear-gradient(to bottom, #3498db, #2980b9);
+        border-radius: 28px;
+        font-family: Arial;
+        color: #ffffff;
+        font-size: 20px;
+        padding: 10px 20px 10px 20px;
+        text-decoration: none;
+        border-width: 0;
+        outline: none;
+        }
+      button:hover {
+        background: #3cb0fd;
+        background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
+        text-decoration: none;
+      }
       .on {
         stroke: blue;
-        fill: blue;
+        fill: #3498db;
+      }
+      .answer {
+        stroke: darkblue;
+        stroke-width: 5px;
+        fill: #3498db;
+        transition: stroke-width 1s;
       }
       .svg-container {
         width: 932px;
         margin: 0 auto;
         margin-top: 50px;
+      }
+      .buttons {
+        width: 300px;
+        margin: 0 auto;
+        margin-top: 20px;
       }
     </style>
   </head>
@@ -432,43 +460,43 @@
          <rect id="rect13793" transform="matrix(-.13163 -.9913 .9913 -.13163 0 0)" x="-257.77" y="739.42" width="29.386" height="8.3863" opacity=".2802"/>
         </g>
        </g>
-       <g id="labels" transform="translate(-61.802 -95.094)" fill="#000000" font-family="Sans" letter-spacing="0px" stroke-width="1px" word-spacing="0px">
-        <text id="text13796" x="71.62793" y="130.6687" font-size="40px" style="line-height:100%" xml:space="preserve"><tspan id="tspan13798" x="71.62793" y="130.6687" font-family="Sans" font-size="10px" style="line-height:100%">Vancouver</tspan></text>
-        <text id="text13800" x="215.63965" y="116.01441" font-size="40px" style="line-height:100%" xml:space="preserve"><tspan id="tspan13802" x="215.63965" y="116.01441" font-family="Sans" font-size="10px" style="line-height:100%">Calgary</tspan></text>
-        <text id="text13804" x="62.438477" y="200.85327" font-size="40px" style="line-height:100%" xml:space="preserve"><tspan id="tspan13806" x="62.438477" y="200.85327" font-family="Sans" font-size="10px" style="line-height:100%">Seattle</tspan></text>
-        <text id="text13808" x="107.22168" y="275.95288" font-size="40px" style="line-height:100%" xml:space="preserve"><tspan id="tspan13810" x="107.22168" y="275.95288" font-family="Sans" font-size="10px" style="line-height:100%">Portland</tspan></text>
-        <text id="text13816" x="294.22168" y="274.82251" font-size="40px" style="line-height:100%" xml:space="preserve"><tspan id="tspan13818" x="294.22168" y="274.82251" font-family="Sans" font-size="10px" style="line-height:100%">Helena</tspan></text>
-        <text id="text13820" x="526.22168" y="242.82251" font-size="40px" style="line-height:100%" xml:space="preserve"><tspan id="tspan13822" x="526.22168" y="242.82251" font-family="Sans" font-size="10px" style="line-height:100%">Duluth</tspan></text>
-        <text id="text13824" x="479.22168" y="123.69215" font-size="40px" style="line-height:100%" xml:space="preserve"><tspan id="tspan13826" x="479.22168" y="123.69215" font-family="Sans" font-size="10px" style="line-height:100%">Winnipeg</tspan></text>
+       <g id="labels" transform="translate(-61.802 -95.094)" fill="#000000" font-family="sans-serif" letter-spacing="0px" stroke-width="1px" word-spacing="0px">
+        <text id="text13796" x="71.62793" y="130.6687" font-size="40px" style="line-height:100%" xml:space="preserve"><tspan id="tspan13798" x="71.62793" y="130.6687" font-family="sans-serif" font-size="10px" style="line-height:100%">Vancouver</tspan></text>
+        <text id="text13800" x="215.63965" y="116.01441" font-size="40px" style="line-height:100%" xml:space="preserve"><tspan id="tspan13802" x="215.63965" y="116.01441" font-family="sans-serif" font-size="10px" style="line-height:100%">Calgary</tspan></text>
+        <text id="text13804" x="62.438477" y="200.85327" font-size="40px" style="line-height:100%" xml:space="preserve"><tspan id="tspan13806" x="62.438477" y="200.85327" font-family="sans-serif" font-size="10px" style="line-height:100%">Seattle</tspan></text>
+        <text id="text13808" x="107.22168" y="275.95288" font-size="40px" style="line-height:100%" xml:space="preserve"><tspan id="tspan13810" x="107.22168" y="275.95288" font-family="sans-serif" font-size="10px" style="line-height:100%">Portland</tspan></text>
+        <text id="text13816" x="294.22168" y="274.82251" font-size="40px" style="line-height:100%" xml:space="preserve"><tspan id="tspan13818" x="294.22168" y="274.82251" font-family="sans-serif" font-size="10px" style="line-height:100%">Helena</tspan></text>
+        <text id="text13820" x="526.22168" y="242.82251" font-size="40px" style="line-height:100%" xml:space="preserve"><tspan id="tspan13822" x="526.22168" y="242.82251" font-family="sans-serif" font-size="10px" style="line-height:100%">Duluth</tspan></text>
+        <text id="text13824" x="479.22168" y="123.69215" font-size="40px" style="line-height:100%" xml:space="preserve"><tspan id="tspan13826" x="479.22168" y="123.69215" font-family="sans-serif" font-size="10px" style="line-height:100%">Winnipeg</tspan></text>
         <text id="text13828" x="691.10254" y="153.95288" font-size="10px" style="line-height:100%" xml:space="preserve"><tspan id="tspan13830" x="691.10254" y="153.95288" style="line-height:100%">Sault St.</tspan><tspan id="tspan13950" x="691.10254" y="163.95288" style="line-height:100%">Marie</tspan></text>
-        <text id="text13832" x="575.22168" y="354.95288" font-size="40px" style="line-height:100%" xml:space="preserve"><tspan id="tspan13834" x="575.22168" y="354.95288" font-family="Sans" font-size="10px" style="line-height:100%">Omaha</tspan></text>
-        <text id="text13836" x="443.22168" y="406.95288" font-size="40px" style="line-height:100%" xml:space="preserve"><tspan id="tspan13838" x="443.22168" y="406.95288" font-family="Sans" font-size="10px" style="line-height:100%">Denver</tspan></text>
-        <text id="text13840" x="352.22168" y="497.95288" font-size="40px" style="line-height:100%" xml:space="preserve"><tspan id="tspan13842" x="352.22168" y="497.95288" font-family="Sans" font-size="10px" style="line-height:100%">Santa Fe</tspan></text>
-        <text id="text13844" x="231.22168" y="507.95288" font-size="40px" style="line-height:100%" xml:space="preserve"><tspan id="tspan13846" x="231.22168" y="507.95288" font-family="Sans" font-size="10px" style="line-height:100%">Las Vegas</tspan></text>
-        <text id="text13848" x="100.34082" y="458.69214" font-size="40px" style="line-height:100%" xml:space="preserve"><tspan id="tspan13850" x="100.34082" y="458.69214" font-family="Sans" font-size="10px" style="line-height:100%">San Fransisco</tspan></text>
-        <text id="text13852" x="197.22168" y="371.69214" font-size="40px" style="line-height:100%" xml:space="preserve"><tspan id="tspan13854" x="197.22168" y="371.69214" font-family="Sans" font-size="10px" style="line-height:100%">Salt Lake City</tspan></text>
-        <text id="text13856" x="88.22168" y="564.95288" font-size="40px" style="line-height:100%" xml:space="preserve"><tspan id="tspan13858" x="88.22168" y="564.95288" font-family="Sans" font-size="10px" style="line-height:100%">Los Angeles</tspan></text>
-        <text id="text13860" x="231.22168" y="570.82251" font-size="40px" style="line-height:100%" xml:space="preserve"><tspan id="tspan13862" x="231.22168" y="570.82251" font-family="Sans" font-size="10px" style="line-height:100%">Phoenix</tspan></text>
-        <text id="text13864" x="365.22168" y="618.82251" font-size="40px" style="line-height:100%" xml:space="preserve"><tspan id="tspan13866" x="365.22168" y="618.82251" font-family="Sans" font-size="10px" style="line-height:100%">El Paso</tspan></text>
+        <text id="text13832" x="575.22168" y="354.95288" font-size="40px" style="line-height:100%" xml:space="preserve"><tspan id="tspan13834" x="575.22168" y="354.95288" font-family="sans-serif" font-size="10px" style="line-height:100%">Omaha</tspan></text>
+        <text id="text13836" x="443.22168" y="406.95288" font-size="40px" style="line-height:100%" xml:space="preserve"><tspan id="tspan13838" x="443.22168" y="406.95288" font-family="sans-serif" font-size="10px" style="line-height:100%">Denver</tspan></text>
+        <text id="text13840" x="352.22168" y="497.95288" font-size="40px" style="line-height:100%" xml:space="preserve"><tspan id="tspan13842" x="352.22168" y="497.95288" font-family="sans-serif" font-size="10px" style="line-height:100%">Santa Fe</tspan></text>
+        <text id="text13844" x="231.22168" y="507.95288" font-size="40px" style="line-height:100%" xml:space="preserve"><tspan id="tspan13846" x="231.22168" y="507.95288" font-family="sans-serif" font-size="10px" style="line-height:100%">Las Vegas</tspan></text>
+        <text id="text13848" x="100.34082" y="458.69214" font-size="40px" style="line-height:100%" xml:space="preserve"><tspan id="tspan13850" x="100.34082" y="458.69214" font-family="sans-serif" font-size="10px" style="line-height:100%">San Fransisco</tspan></text>
+        <text id="text13852" x="197.22168" y="371.69214" font-size="40px" style="line-height:100%" xml:space="preserve"><tspan id="tspan13854" x="197.22168" y="371.69214" font-family="sans-serif" font-size="10px" style="line-height:100%">Salt Lake City</tspan></text>
+        <text id="text13856" x="88.22168" y="564.95288" font-size="40px" style="line-height:100%" xml:space="preserve"><tspan id="tspan13858" x="88.22168" y="564.95288" font-family="sans-serif" font-size="10px" style="line-height:100%">Los Angeles</tspan></text>
+        <text id="text13860" x="231.22168" y="570.82251" font-size="40px" style="line-height:100%" xml:space="preserve"><tspan id="tspan13862" x="231.22168" y="570.82251" font-family="sans-serif" font-size="10px" style="line-height:100%">Phoenix</tspan></text>
+        <text id="text13864" x="365.22168" y="618.82251" font-size="40px" style="line-height:100%" xml:space="preserve"><tspan id="tspan13866" x="365.22168" y="618.82251" font-family="sans-serif" font-size="10px" style="line-height:100%">El Paso</tspan></text>
         <text id="text13868" x="505.22168" y="455.69214" font-size="10px" style="line-height:100%" xml:space="preserve"><tspan id="tspan13870" x="505.22168" y="455.69214" style="line-height:100%">Oklahoma</tspan><tspan id="tspan13952" x="505.22168" y="465.69214" style="line-height:100%">City</tspan></text>
-        <text id="text13872" x="587.22168" y="414.69214" font-size="40px" style="line-height:100%" xml:space="preserve"><tspan id="tspan13874" x="587.22168" y="414.69214" font-family="Sans" font-size="10px" style="line-height:100%">Kansas City</tspan></text>
-        <text id="text13876" x="692.22168" y="408.69214" font-size="40px" style="line-height:100%" xml:space="preserve"><tspan id="tspan13878" x="692.22168" y="408.69214" font-family="Sans" font-size="10px" style="line-height:100%">Saint Louis</tspan></text>
-        <text id="text13880" x="664.22168" y="499.82251" font-size="40px" style="line-height:100%" xml:space="preserve"><tspan id="tspan13882" x="664.22168" y="499.82251" font-family="Sans" font-size="10px" style="line-height:100%">Little Rock</tspan></text>
-        <text id="text13884" x="595.22168" y="564.95288" font-size="40px" style="line-height:100%" xml:space="preserve"><tspan id="tspan13886" x="595.22168" y="564.95288" font-family="Sans" font-size="10px" style="line-height:100%">Dallas</tspan></text>
+        <text id="text13872" x="587.22168" y="414.69214" font-size="40px" style="line-height:100%" xml:space="preserve"><tspan id="tspan13874" x="587.22168" y="414.69214" font-family="sans-serif" font-size="10px" style="line-height:100%">Kansas City</tspan></text>
+        <text id="text13876" x="692.22168" y="408.69214" font-size="40px" style="line-height:100%" xml:space="preserve"><tspan id="tspan13878" x="692.22168" y="408.69214" font-family="sans-serif" font-size="10px" style="line-height:100%">Saint Louis</tspan></text>
+        <text id="text13880" x="664.22168" y="499.82251" font-size="40px" style="line-height:100%" xml:space="preserve"><tspan id="tspan13882" x="664.22168" y="499.82251" font-family="sans-serif" font-size="10px" style="line-height:100%">Little Rock</tspan></text>
+        <text id="text13884" x="595.22168" y="564.95288" font-size="40px" style="line-height:100%" xml:space="preserve"><tspan id="tspan13886" x="595.22168" y="564.95288" font-family="sans-serif" font-size="10px" style="line-height:100%">Dallas</tspan></text>
         <text id="text13888" x="708.10254" y="617.95288" font-size="10px" style="line-height:100%" xml:space="preserve"><tspan id="tspan13890" x="708.10254" y="617.95288" style="line-height:100%">New</tspan><tspan id="tspan13948" x="708.10254" y="627.95288" style="line-height:100%">Orleans</tspan></text>
-        <text id="text13892" x="624.22168" y="628.95288" font-size="40px" style="line-height:100%" xml:space="preserve"><tspan id="tspan13894" x="624.22168" y="628.95288" font-family="Sans" font-size="10px" style="line-height:100%">Houston</tspan></text>
-        <text id="text13900" x="777.10254" y="436.82251" font-size="40px" style="line-height:100%" xml:space="preserve"><tspan id="tspan13902" x="777.10254" y="436.82251" font-family="Sans" font-size="10px" style="line-height:100%">Nashville</tspan></text>
-        <text id="text13904" x="918.22168" y="480.82251" font-size="40px" style="line-height:100%" xml:space="preserve"><tspan id="tspan13906" x="918.22168" y="480.82251" font-family="Sans" font-size="10px" style="line-height:100%">Charleston</tspan></text>
-        <text id="text13908" x="834.22168" y="467.82251" font-size="40px" style="line-height:100%" xml:space="preserve"><tspan id="tspan13910" x="834.22168" y="467.82251" font-family="Sans" font-size="10px" style="line-height:100%">Atlanta</tspan></text>
-        <text id="text13912" x="946.22168" y="647.95288" font-size="40px" style="line-height:100%" xml:space="preserve"><tspan id="tspan13914" x="946.22168" y="647.95288" font-family="Sans" font-size="10px" style="line-height:100%">Miami</tspan></text>
-        <text id="text13916" x="898.22168" y="411.69214" font-size="40px" style="line-height:100%" xml:space="preserve"><tspan id="tspan13918" x="898.22168" y="411.69214" font-family="Sans" font-size="10px" style="line-height:100%">Raleigh</tspan></text>
-        <text id="text13920" x="935.22168" y="363.82251" font-size="40px" style="line-height:100%" xml:space="preserve"><tspan id="tspan13922" x="935.22168" y="363.82251" font-family="Sans" font-size="10px" style="line-height:100%">Washington</tspan></text>
-        <text id="text13924" x="940.10254" y="265.82251" font-size="40px" style="line-height:100%" xml:space="preserve"><tspan id="tspan13926" x="940.10254" y="265.82251" font-family="Sans" font-size="10px" style="line-height:100%">New York</tspan></text>
-        <text id="text13928" x="927.10254" y="186.69214" font-size="40px" style="line-height:100%" xml:space="preserve"><tspan id="tspan13930" x="927.10254" y="186.69214" font-family="Sans" font-size="10px" style="line-height:100%">Boston</tspan></text>
-        <text id="text13932" x="836.22168" y="210.82251" font-size="40px" style="line-height:100%" xml:space="preserve"><tspan id="tspan13934" x="836.22168" y="210.82251" font-family="Sans" font-size="10px" style="line-height:100%">Toronto</tspan></text>
-        <text id="text13936" x="905.22168" y="109.69215" font-size="40px" style="line-height:100%" xml:space="preserve"><tspan id="tspan13938" x="905.22168" y="109.69215" font-family="Sans" font-size="10px" style="line-height:100%">Montreal</tspan></text>
-        <text id="text13940" x="721.22168" y="330.95288" font-size="40px" style="line-height:100%" xml:space="preserve"><tspan id="tspan13942" x="721.22168" y="330.95288" font-family="Sans" font-size="10px" style="line-height:100%">Chicago</tspan></text>
-        <text id="text13944" x="865.10254" y="302.82251" font-size="40px" style="line-height:100%" xml:space="preserve"><tspan id="tspan13946" x="865.10254" y="302.82251" font-family="Sans" font-size="10px" style="line-height:100%">Pittsburgh</tspan></text>
+        <text id="text13892" x="624.22168" y="628.95288" font-size="40px" style="line-height:100%" xml:space="preserve"><tspan id="tspan13894" x="624.22168" y="628.95288" font-family="sans-serif" font-size="10px" style="line-height:100%">Houston</tspan></text>
+        <text id="text13900" x="777.10254" y="436.82251" font-size="40px" style="line-height:100%" xml:space="preserve"><tspan id="tspan13902" x="777.10254" y="436.82251" font-family="sans-serif" font-size="10px" style="line-height:100%">Nashville</tspan></text>
+        <text id="text13904" x="918.22168" y="480.82251" font-size="40px" style="line-height:100%" xml:space="preserve"><tspan id="tspan13906" x="918.22168" y="480.82251" font-family="sans-serif" font-size="10px" style="line-height:100%">Charleston</tspan></text>
+        <text id="text13908" x="834.22168" y="467.82251" font-size="40px" style="line-height:100%" xml:space="preserve"><tspan id="tspan13910" x="834.22168" y="467.82251" font-family="sans-serif" font-size="10px" style="line-height:100%">Atlanta</tspan></text>
+        <text id="text13912" x="946.22168" y="647.95288" font-size="40px" style="line-height:100%" xml:space="preserve"><tspan id="tspan13914" x="946.22168" y="647.95288" font-family="sans-serif" font-size="10px" style="line-height:100%">Miami</tspan></text>
+        <text id="text13916" x="898.22168" y="411.69214" font-size="40px" style="line-height:100%" xml:space="preserve"><tspan id="tspan13918" x="898.22168" y="411.69214" font-family="sans-serif" font-size="10px" style="line-height:100%">Raleigh</tspan></text>
+        <text id="text13920" x="935.22168" y="363.82251" font-size="40px" style="line-height:100%" xml:space="preserve"><tspan id="tspan13922" x="935.22168" y="363.82251" font-family="sans-serif" font-size="10px" style="line-height:100%">Washington</tspan></text>
+        <text id="text13924" x="940.10254" y="265.82251" font-size="40px" style="line-height:100%" xml:space="preserve"><tspan id="tspan13926" x="940.10254" y="265.82251" font-family="sans-serif" font-size="10px" style="line-height:100%">New York</tspan></text>
+        <text id="text13928" x="927.10254" y="186.69214" font-size="40px" style="line-height:100%" xml:space="preserve"><tspan id="tspan13930" x="927.10254" y="186.69214" font-family="sans-serif" font-size="10px" style="line-height:100%">Boston</tspan></text>
+        <text id="text13932" x="836.22168" y="210.82251" font-size="40px" style="line-height:100%" xml:space="preserve"><tspan id="tspan13934" x="836.22168" y="210.82251" font-family="sans-serif" font-size="10px" style="line-height:100%">Toronto</tspan></text>
+        <text id="text13936" x="905.22168" y="109.69215" font-size="40px" style="line-height:100%" xml:space="preserve"><tspan id="tspan13938" x="905.22168" y="109.69215" font-family="sans-serif" font-size="10px" style="line-height:100%">Montreal</tspan></text>
+        <text id="text13940" x="721.22168" y="330.95288" font-size="40px" style="line-height:100%" xml:space="preserve"><tspan id="tspan13942" x="721.22168" y="330.95288" font-family="sans-serif" font-size="10px" style="line-height:100%">Chicago</tspan></text>
+        <text id="text13944" x="865.10254" y="302.82251" font-size="40px" style="line-height:100%" xml:space="preserve"><tspan id="tspan13946" x="865.10254" y="302.82251" font-family="sans-serif" font-size="10px" style="line-height:100%">Pittsburgh</tspan></text>
        </g>
        <g id="cities" transform="translate(-61.802 -95.094)" fill="none" stroke="#0f8deb" stroke-opacity=".85098" stroke-width="3.0345">
         <circle id="circle3726" transform="scale(1,-1)" cx="114.5" cy="-198.59" r="7.9828" opacity=".5976"/>
@@ -529,6 +557,7 @@
     </div>
 
     <!-- <script src="snap.svg-min.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/snap.svg/0.5.1/snap.svg.js" charset="utf-8"></script>
     <script src="index.js"></script>
   </body>
 </html>
