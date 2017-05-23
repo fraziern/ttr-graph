@@ -35,35 +35,48 @@ function calculateRoute(e) {
   // get response, display it
 }
 
-function resetGraph() {
-  // use pubsub
+function clearGraph() {
+  if (pathList) {
+    pathList.slice().forEach((nodeName) => {
+      pubSub.publish("toggleNode", nodeName);
+    });
+  }
+  clearAnswer();
+}
+
+function clearAnswer() {
+  if (answerList) {
+    answerList.slice().forEach((nodeName) => {
+      pubSub.publish("toggleAnswer", nodeName);
+    });
+  }
 }
 
 function displayAnswer(data) {
   pubSub.publish("updateDisplay", "Longest Length: " + data.length);
 
   // generate id names
-  answerList = [];
+  let queue = [];
   for (let i = 1; i < data.trail.length; i++) {
     let nodes = [data.trail[i-1], data.trail[i]].sort();
+    // TODO check direction, use this somehow to control animation direction
+
     // TODO change this to a pubsub call
     // that both adds to the answerlist and updates the display
-    answerList.push(nodes.join("-").replace(/\s/g, "_"));
+    queue.push(nodes.join("-").replace(/\s/g, "_"));
   }
 
   // toggle classes to display answer
-  answerList.forEach((nodeName, idx) => {
-    let node = document.querySelector("#" + nodeName);
+  queue.forEach((nodeName, idx) => {
     window.setTimeout(() => {
-      animatePath("#" + nodeName);
-      node.classList.add("answer");
-      node.classList.remove("on");
+      animatePath(nodeName);
+      pubSub.publish("toggleAnswer", nodeName);
     }, 500 * idx);
   });
 }
 
-function animatePath(gid) {
-  let s = Snap(gid);
+function animatePath(nodeName) {
+  let s = Snap("#" + nodeName);
   let children = s.children();
 
   for (let i = 0; i < children.length; i++) {
@@ -101,17 +114,26 @@ var pubSub = (function() {
 })();
 
 // TODO: should this use a set instead?
-var listToggle = (nodeName) => {
+pubSub.on("toggleNode", (nodeName) => {
   let idx = pathList.indexOf(nodeName);
   if (idx >= 0) pathList.splice(idx, 1);
   else pathList.push(nodeName);
-  // pubSub.publish("updateDisplay");
-};
+});
 
-pubSub.on("toggle", (nodeName) => {
+pubSub.on("toggleNode", (nodeName) => {
   let node = document.querySelector("#" + nodeName);
   node.classList.toggle("on");
-  listToggle(nodeName);
+});
+
+pubSub.on("toggleAnswer", (nodeName) => {
+  let idx = answerList.indexOf(nodeName);
+  if (idx >= 0) answerList.splice(idx, 1);
+  else answerList.push(nodeName);
+});
+
+pubSub.on("toggleAnswer", (nodeName) => {
+  let node = document.querySelector("#" + nodeName);
+  node.classList.toggle("answer");
 });
 
 pubSub.on("updateDisplay", (content) => {
@@ -122,10 +144,15 @@ pubSub.on("updateDisplay", (content) => {
 var components = document.querySelectorAll("#svg2 > *");
 for (let i = 0; i < components.length; i++) {
   components[i].addEventListener("click", (e) => {
+    // clear answer if exists
+    clearAnswer();
     let id = (e.target && e.target.parentNode) ? e.target.parentNode.id : "";
-    pubSub.publish("toggle", id);
+    pubSub.publish("toggleNode", id);
   });
 }
 
 let btnCalculate = document.querySelector("#btnCalculate");
 btnCalculate.addEventListener("click", calculateRoute);
+
+let btnReset = document.querySelector("#btnReset");
+btnReset.addEventListener("click", clearGraph);
