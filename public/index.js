@@ -49,11 +49,14 @@ function clearAnswer() {
     answerList.slice().forEach((nodeName) => {
       pubSub.publish("toggleAnswer", nodeName);
     });
+    let output = document.querySelector(".output-text");
+    output.textContent = "";
+    output.classList.remove("output-text--display");
   }
 }
 
 function displayAnswer(data) {
-  pubSub.publish("updateDisplay", "Longest Length: " + data.length);
+  pubSub.publish("updateDisplay", data.length);
 
   // generate id names
   let queue = [];
@@ -139,6 +142,7 @@ pubSub.on("toggleAnswer", (nodeName) => {
 pubSub.on("updateDisplay", (content) => {
   let output = document.querySelector(".output-text");
   output.textContent = content;
+  output.classList.add("output-text--display");
 });
 
 var components = document.querySelectorAll("#svg2 > *");
