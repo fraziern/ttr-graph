@@ -56,6 +56,11 @@ function clearAnswer() {
 }
 
 function displayAnswer(data) {
+  if (data.error) {
+    pubSub.publish("updateDisplay", "!");
+    return;
+  }
+  
   pubSub.publish("updateDisplay", data.length);
 
   // generate id names
@@ -124,7 +129,9 @@ pubSub.on("toggleNode", (nodeName) => {
 });
 
 pubSub.on("toggleNode", (nodeName) => {
-  let node = document.querySelector("#" + nodeName);
+  // for some reason '.' chars don't work in querySelector
+  let fullNodeName = "#" + nodeName.replace(/\./g, "\\.");
+  let node = document.querySelector(fullNodeName);
   node.classList.toggle("on");
 });
 

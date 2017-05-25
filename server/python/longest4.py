@@ -25,8 +25,11 @@ def trail_distance(trail, weights):
     distance = 0
     for idx in range(0,len(trail)-1):
         edge = (trail[idx],trail[idx+1])
-        # assert weights.has_key(edge)
-        distance += weights[edge]
+        try:
+            distance += weights[edge]
+        except:
+            print("Error: key not found in wieghts table", edge)
+            raise KeyError(edge)
     return distance
 
 def find_long_trail(graph, weights, start, path=()):

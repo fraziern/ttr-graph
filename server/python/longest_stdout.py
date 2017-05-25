@@ -28,10 +28,15 @@ def main():
                 main_graph[direction[0]] += [direction[1]]
 
     # run algorithm, get response
-    longest = find_longest_trail(main_graph)
-
+    try:
+        longest = find_longest_trail(main_graph)
+        json_output = { 'trail': longest[0], 'length': longest[1] }
+    except KeyError:
+        json_output = { 'error': 'Node name not found' }
+    except:
+        json_output = { 'error': 'Unknown error while finding longest trail' }
+        
     # send JSON to stdout
-    json_output = { 'trail': longest[0], 'length': longest[1] }
     print json.dumps(json_output)
 
 #start process
